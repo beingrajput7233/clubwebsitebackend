@@ -7,6 +7,12 @@
 - Install the necessary packages and dependencies using "npm install"
 - DB connection key and other private things will be shared explicitly on Discord.
 
+## Docker Setup
+- After cloning the repositry install Docker and Docker-Compose on your local machine.
+- Navigate to directory containing docker-compose.yml file
+- Run command $docker-compose up -d  this will start postgresql container in background mode.
+- Now run command $psql -h localhost -U your_username -d your_database to connect postgresql from your host machine. 
+
 ## Contributing
 - To add your changes, you need to follow these steps :
     - Create a branch ( Name of the branch should be "YOUR_NAME-BACKEND-ISSUE" )
