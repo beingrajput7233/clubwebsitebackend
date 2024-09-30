@@ -1,0 +1,14 @@
+model Meetings{
+    Meeting_Id String @id  @default(uuid())
+    Meeting_Time String 
+    Meeting_Venue String
+    Meeting_Agenda String
+    Created_At DateTime @default(now())
+    Meeting_Status Status 
+    mentors MeetingMentor[]
+}
+enum Status{
+        Scheduled
+        Cancelled
+        Completed
+}

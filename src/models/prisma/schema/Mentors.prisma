@@ -1,0 +1,8 @@
+model Mentors{
+    Mentor_Id String @id  @default(uuid())
+    Mentor_RollNo BigInt @unique
+    Mentor_Email String
+    Mentor_Name String
+    Mentor_Description String?
+    meetings MeetingMentor[]
+}
