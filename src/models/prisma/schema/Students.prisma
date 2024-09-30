@@ -1,0 +1,8 @@
+model Students{
+    Student_Id String @id @unique @default(uuid())
+    Name String 
+    Email String  @unique
+    College_Branch String 
+    College_Year String
+    Profiles Profiles?
+}
