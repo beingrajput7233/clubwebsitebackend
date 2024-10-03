@@ -1,0 +1,7 @@
+model Notifications{
+    Id String @id  @default(uuid())
+    notification_object Notification_Object @relation(fields:[notification_object_id],references: [Id],onDelete: Cascade)
+    notification_object_id String @unique
+    notifications_students NotificationStudents[]
+    status NotificationStatus
+}

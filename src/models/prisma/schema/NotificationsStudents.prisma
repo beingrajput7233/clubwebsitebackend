@@ -1,0 +1,8 @@
+model NotificationStudents {
+    student_id       String
+    notification_id  String
+    students         Students    @relation(fields: [student_id], references: [Student_Id],onDelete: Cascade)
+    notifications    Notifications @relation(fields: [notification_id], references: [Id])
+
+    @@id([student_id, notification_id])
+}

@@ -1,7 +1,8 @@
 model Profiles{
-    student_id String @id @unique @default(uuid())
+    Id String @id  @default(uuid())
     Profile_CF String?
     Profile_CC String?
     Profile_Atcoder String?
     Students Students @relation(fields:[student_id],references:[Student_Id],onDelete: Cascade)
+    student_id String @unique
 }

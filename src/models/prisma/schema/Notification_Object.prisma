@@ -1,0 +1,15 @@
+model Notification_Object{
+    Id String @id @default(uuid())
+    entity Meetings @relation(fields:[entity_id],references: [Meeting_Id],onDelete: Cascade)
+    entity_id String @unique
+    entity_type_id Int
+    created_on DateTime @default(now())
+    status NotificationStatus
+    notification Notifications?
+    notification_change Notification_Change?
+}
+enum NotificationStatus{
+    PENDING
+    SENT
+    DISCARD
+}

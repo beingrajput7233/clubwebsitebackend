@@ -6,6 +6,7 @@ model Meetings{
     Created_At DateTime @default(now())
     Meeting_Status Status 
     mentors MeetingMentor[]
+    notification_object Notification_Object?
 }
 enum Status{
         Scheduled

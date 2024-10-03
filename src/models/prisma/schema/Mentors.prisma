@@ -5,4 +5,5 @@ model Mentors{
     Mentor_Name String
     Mentor_Description String?
     meetings MeetingMentor[]
+    notifications Notification_Change[]
 }

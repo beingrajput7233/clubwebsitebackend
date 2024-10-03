@@ -1,0 +1,8 @@
+model Notification_Change{
+    Id String @id  @default(uuid())
+    notification_object Notification_Object @relation(fields:[notification_object_id],references: [Id],onDelete: Cascade)
+    notification_object_id String @unique
+    actor Mentors @relation(fields:[actor_id],references: [Mentor_Id],onDelete: Cascade)
+    actor_id String
+    status NotificationStatus
+}
