@@ -1,9 +1,10 @@
 model Students{
     Student_Id String @id @default(uuid())
     Name String 
-    Email String  @unique
+    Email String?  @unique
     College_Branch String 
     College_Year String
+    College_RollNo String @unique
     Profiles Profiles?
     Notifications_Students NotificationStudents[]
 }
