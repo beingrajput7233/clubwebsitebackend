@@ -6,4 +6,6 @@ model Mentors{
     Mentor_Description String?
     meetings MeetingMentor[]
     notifications Notification_Change[]
+    Blog Blog[] @relation("mentorblog")
+    Comment Comment[] @relation("mentorComment")
 }

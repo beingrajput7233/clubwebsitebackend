@@ -1,0 +1,20 @@
+model Comment{
+
+    Id String @id @default(uuid())
+    Description String?
+    NumberOfLikes Int @default(0)
+    CreationTime DateTime @default(now())
+    UpdationTime DateTime @updatedAt
+    Deleted Boolean @default(false)
+    Priority Boolean @default(false)
+    StudentAuthor Students? @relation("studentComment",fields:[AuthorId],references: [Student_Id],onDelete: Cascade,map:"StudentAuthorComment")
+    MentorAuthor Mentors? @relation("mentorComment",fields:[AuthorId],references: [Mentor_Id],onDelete: Cascade,map:"MentorAuthorComment")
+    AuthorId String
+    Blog Blog @relation(fields:[BlogId],references: [Id])
+    BlogId String 
+    ParentBlog Blog? @relation("ParentChild",fields:[ParentId],references: [Id],onDelete: SetNull,map:"ParentBlogId")
+    ParentComment Comment? @relation("ParentChild",fields:[ParentId],references: [Id],onDelete: SetNull,map:"ParentCommentId")
+    ParentId String?
+    Children Comment[] @relation("ParentChild")
+    
+}

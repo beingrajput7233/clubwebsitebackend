@@ -1,0 +1,16 @@
+model Blog{
+    Id String @id @default(uuid())
+    Title String
+    Description String?
+    CreationTime DateTime @default(now())
+    UpdationTime DateTime @updatedAt
+    Image String?
+    Deleted Boolean @default(false)
+    Priority Boolean @default(false)
+    Number_Of_Likes Int @default(0)
+    AuthorStudent Students? @relation("studentblog",fields:[AuthorId],references: [Student_Id],onDelete: Cascade,map:"studentauthor")
+    AuthorMentor Mentors? @relation("mentorblog",fields:[AuthorId],references: [Mentor_Id],onDelete: Cascade,map:"mentorauthor")
+    AuthorId String
+    Comments Comment[] // comments on the blog
+    Childrens Comment[] @relation("ParentChild")
+}

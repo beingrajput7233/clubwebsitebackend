@@ -7,4 +7,6 @@ model Students{
     College_RollNo String @unique
     Profiles Profiles?
     Notifications_Students NotificationStudents[]
+    Blog Blog[] @relation("studentblog")
+    Comment Comment[] @relation("studentComment")
 }
